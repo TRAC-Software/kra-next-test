@@ -1,6 +1,13 @@
 import NewsGrid from '@/components/NewsGrid';
 import { Metadata } from 'next';
 
+type Props = {
+  params: {
+    category: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
 const categoryTitles: { [key: string]: string } = {
   commercial: 'Commercial Aviation News',
   technology: 'Aviation Technology News',
@@ -10,7 +17,7 @@ const categoryTitles: { [key: string]: string } = {
   regulations: 'Aviation Regulations News'
 };
 
-export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = params.category;
   const title = categoryTitles[category] || `${category.charAt(0).toUpperCase() + category.slice(1)} News`;
   
@@ -20,8 +27,8 @@ export async function generateMetadata({ params }: { params: { category: string 
   };
 }
 
-export default function Page({ params }: { params: { category: string } }) {
-  const category = params.category;
+export default function Page(props: Props) {
+  const category = props.params.category;
   const title = categoryTitles[category] || `${category.charAt(0).toUpperCase() + category.slice(1)} News`;
 
   return (
