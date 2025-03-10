@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    typedRoutes: true
-  },
+  reactStrictMode: true,
+  swcMinify: true,
   images: {
-    unoptimized: true
-  }
+    unoptimized: true,
+    domains: [],
+  },
+  // Amplify requires this to be set to true for SSG
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 
