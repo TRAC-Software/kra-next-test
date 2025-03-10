@@ -1,58 +1,54 @@
 import Link from 'next/link'
 
-const Categories = () => {
-  const categories = [
-    {
-      id: 1,
-      name: "Commercial Aviation",
-      icon: "✈️",
-      count: 45
-    },
-    {
-      id: 2,
-      name: "Technology",
-      icon: "🛠️",
-      count: 32
-    },
-    {
-      id: 3,
-      name: "Military",
-      icon: "🪖",
-      count: 28
-    },
-    {
-      id: 4,
-      name: "Business Aviation",
-      icon: "🛩️",
-      count: 24
-    },
-    {
-      id: 5,
-      name: "Sustainability",
-      icon: "🌱",
-      count: 19
-    },
-    {
-      id: 6,
-      name: "Space",
-      icon: "🚀",
-      count: 15
-    }
-  ]
+const categories = [
+  {
+    name: 'Commercial',
+    description: 'Latest updates from commercial aviation sector',
+    icon: '✈️',
+  },
+  {
+    name: 'Technology',
+    description: 'Innovations and advancements in aviation technology',
+    icon: '🛠️',
+  },
+  {
+    name: 'Military',
+    description: 'Defense aviation news and developments',
+    icon: '🛩️',
+  },
+  {
+    name: 'Business',
+    description: 'Private and business aviation updates',
+    icon: '🚁',
+  },
+  {
+    name: 'Sustainability',
+    description: 'Sustainable aviation and environmental initiatives',
+    icon: '🌱',
+  },
+  {
+    name: 'Regulations',
+    description: 'Aviation regulations and safety standards',
+    icon: '📋',
+  },
+]
 
+const Categories = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {categories.map((category) => (
         <Link
-          key={category.id}
-          href={`/category/${category.id}`}
-          className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center group"
+          key={category.name}
+          href={`/category/${category.name.toLowerCase()}`}
+          className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
         >
-          <span className="text-3xl mb-2 block">{category.icon}</span>
-          <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
-            {category.name}
-          </h3>
-          <span className="text-sm text-gray-500">{category.count} articles</span>
+          <div className="flex items-center space-x-4">
+            <span className="text-2xl">{category.icon}</span>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900">{category.name}</h3>
+              <p className="text-gray-600">{category.description}</p>
+            </div>
+          </div>
         </Link>
       ))}
     </div>

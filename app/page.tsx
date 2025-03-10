@@ -1,5 +1,5 @@
-import NewsGrid from '@/components/NewsGrid'
 import FeaturedNews from '@/components/FeaturedNews'
+import NewsGrid from '@/components/NewsGrid'
 import Categories from '@/components/Categories'
 
 export default function Home() {
