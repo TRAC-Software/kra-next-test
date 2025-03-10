@@ -1,5 +1,1 @@
-{
-  "/_not-found/page": "/_not-found",
-  "/favicon.ico/route": "/favicon.ico",
-  "/page": "/"
-}
+{"/_not-found":"/_not-found","/article/[id]/page":"/article/[id]","/category/[category]/page":"/category/[category]","/news/[id]/page":"/news/[id]","/page":"/","/about/page":"/about","/privacy/page":"/privacy","/terms/page":"/terms","/contact/page":"/contact"}
