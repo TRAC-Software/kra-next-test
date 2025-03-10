@@ -9,5 +9,5 @@ binding = "NEXT_CACHE_WORKERS_KV"
 id = "ae6ebe1167c0419d8a0c88f80ede2e7f"
 
 [[routes]]
-pattern = "test2.kraaviation.com"
+pattern = "news.kraaviation.com"
 custom_domain = true
